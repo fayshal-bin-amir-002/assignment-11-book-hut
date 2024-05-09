@@ -7,8 +7,11 @@ const BookCategory = () => {
             <Tabs>
                 <div className='text-center'>
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
+                        <Tab>Biography</Tab>
+                        <Tab>History</Tab>
+                        <Tab>Health & Fitness</Tab>
+                        <Tab>Travel</Tab>
+                        <Tab>Science & Math</Tab>
                     </TabList>
                 </div>
 
@@ -17,6 +20,15 @@ const BookCategory = () => {
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 2</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Any content 3</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Any content 4</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Any content 5</h2>
                 </TabPanel>
             </Tabs>
         </div>

@@ -3,11 +3,11 @@ import useAuth from "../hooks/useAuth";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Register = () => {
 
-    const { userRegister, userProfileUpdate, userLogOut } = useAuth();
+    const { user, userRegister, userProfileUpdate, userLogOut } = useAuth();
 
     const [show, setShow] = useState(false);
 
@@ -42,20 +42,24 @@ const Register = () => {
                                 toast.success('User register successfully.')
                             })
                             .catch(error => {
-                                toast.error(error);
+                                toast.error(error.message);
                             })
                     })
                     .catch(error => {
-                        toast.error(error);
+                        toast.error(error.message);
                     })
             })
             .catch(error => {
-                toast.error(error);
+                toast.error(error.message);
             })
     }
 
+    if (user) {
+        return <Navigate to="/"></Navigate>
+    }
+
     return (
-        <div className="flex justify-center items-center min-h-[calc(100vh - 104px)] py-6 md:py-8 lg:py-12">
+        <div className="flex justify-center items-center min-h-[calc(100vh - 415px)] py-6 md:py-8 lg:py-12">
             <form onSubmit={handleSubmit} className="w-[90%] md:w-2/3 lg:w-[600px] bg-[#8DECB4] p-6 lg:p-10 rounded-lg shadow-lg bg-opacity-30">
                 <label className="input input-bordered rounded-full flex items-center gap-2 focus:outline-none mb-6 lg:mb-8">
                     Name

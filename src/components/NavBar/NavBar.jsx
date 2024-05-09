@@ -4,6 +4,7 @@ import { PiMoon } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 
 const NavBar = () => {
@@ -20,11 +21,17 @@ const NavBar = () => {
     const handleLogOut = () => {
         userLogOut()
             .then(() => {
-                toast.success('User logged out');
+                const loggedUser = { email: user?.email };
+                axios.post('http://localhost:3000/logout', loggedUser, { withCredentials: true })
+                    .then((res) => {
+                        if (res.data.success) {
+                            toast.success('User logged out');
+                        }
+                    })
             })
             .catch(error => {
                 toast.error(error);
-            }) 
+            })
     }
 
     const navLinks = <>
@@ -72,7 +79,7 @@ const NavBar = () => {
                                     </div>
                                 </div>
                                 <ul tabIndex={0} className="mt-1 bg-[#8DECB4] space-y-3 z-[1] p-2 shadow menu menu-sm dropdown-content  rounded-box min-w-52">
-                                    <li><small>{user?.email}</small></li>
+                                    <li><small>Email: {user?.email}</small></li>
                                     <li className="flex lg:hidden"><button onClick={handleLogOut} className="btn-sm btn border-none bg-red-400 text-white rounded-full px-6">Log Out</button></li>
                                 </ul>
                             </div>

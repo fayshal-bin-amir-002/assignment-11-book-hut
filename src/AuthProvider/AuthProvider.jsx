@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const librarianEmail = import.meta.env.VITE_LIBRARIANEMAIL;
 
     const userRegister = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -46,7 +47,7 @@ const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    const AuthData = { user, userRegister, userLogin, userLogOut, googleLogIn, userProfileUpdate };
+    const AuthData = { librarianEmail, user, userRegister, userLogin, userLogOut, googleLogIn, userProfileUpdate };
 
     if(loading) {
         return <Loader></Loader>

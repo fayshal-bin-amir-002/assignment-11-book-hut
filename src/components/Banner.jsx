@@ -13,7 +13,7 @@ const Banner = () => {
                     <div className="md:max-w-lg">
                         <h1 className="mb-5 text-3xl md:text-5xl font-bold">Welcome to Your Digital <span className="text-[#8DECB4]">Library</span></h1>
                         <p className="mb-5 opacity-80">Streamline your library experience with our intuitive system. Access, organize, and explore vast collections effortlessly. Welcome to seamless reading and learning.</p>
-                        <button className="btn bg-[#41B06E] border-none text-white text-lg">Explore</button>
+                        <button className="btn bg-[#41B06E] border-none text-white text-lg">Explore Now</button>
                     </div>
                 </div>
                 <div className="px-5 md:w-[75%] mx-auto lg:w-1/2 lg:mr-12">
