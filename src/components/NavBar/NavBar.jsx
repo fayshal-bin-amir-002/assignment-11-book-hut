@@ -3,6 +3,7 @@ import { MdSunny } from "react-icons/md";
 import { PiMoon } from "react-icons/pi";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 const NavBar = () => {
@@ -19,10 +20,10 @@ const NavBar = () => {
     const handleLogOut = () => {
         userLogOut()
             .then(() => {
-
+                toast.success('User logged out');
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error);
             }) 
     }
 
@@ -67,12 +68,12 @@ const NavBar = () => {
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-12 rounded-full overflow-hidden border-4 border-[#8DECB4]">
-                                        <img className="rouned-full " alt="image" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        <img className="rouned-full " alt="image" src={user?.photoURL} />
                                     </div>
                                 </div>
-                                <ul tabIndex={0} className="mt-3 bg-[#8DECB4] space-y-3 z-[1] p-2 shadow menu menu-sm dropdown-content  rounded-box min-w-52">
+                                <ul tabIndex={0} className="mt-1 bg-[#8DECB4] space-y-3 z-[1] p-2 shadow menu menu-sm dropdown-content  rounded-box min-w-52">
                                     <li><small>{user?.email}</small></li>
-                                    <li><button onClick={handleLogOut} className="flex lg:hidden btn-sm btn border-none bg-red-400 text-white rounded-full px-6">Log Out</button></li>
+                                    <li className="flex lg:hidden"><button onClick={handleLogOut} className="btn-sm btn border-none bg-red-400 text-white rounded-full px-6">Log Out</button></li>
                                 </ul>
                             </div>
                             <button onClick={handleLogOut} className="hidden lg:flex btn border-none bg-red-400 text-white rounded-full px-6">Log Out</button>

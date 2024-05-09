@@ -2,12 +2,15 @@ import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Login = () => {
 
     const { userLogin, googleLogIn } = useAuth();
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
 
@@ -16,8 +19,27 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
-        toast.success('Logged in');
+
+        userLogin(email, password)
+            .then(() => {
+                form.reset();
+                toast.success('User logged in successfully.');
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch(error => {
+                toast.error(error);
+            })
+    }
+
+    const handleGoogleLogIn = () => {
+        googleLogIn()
+            .then(() => {
+                toast.success('User logged in successfully.');
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch(error => {
+                toast.error(error);
+            })
     }
 
     return (
@@ -25,11 +47,11 @@ const Login = () => {
             <form onSubmit={handleSubmit} className="w-[90%] md:w-2/3 lg:w-[600px] bg-[#8DECB4] p-6 lg:p-10 rounded-lg shadow-lg bg-opacity-30">
                 <label className="input input-bordered rounded-full flex items-center gap-2 focus:outline-none mb-6 lg:mb-8">
                     Email
-                    <input type="email" name="email" className="grow focus:outline-none" />
+                    <input type="email" name="email" className="grow focus:outline-none" required />
                 </label>
                 <label className="input input-bordered rounded-full flex items-center gap-2 focus:outline-none relative mb-8 lg:mb-12">
                     Password
-                    <input name="password" type={show ? 'text' : 'password'} className="grow focus:outline-none" />
+                    <input name="password" type={show ? 'text' : 'password'} className="grow focus:outline-none" required />
                     <span onClick={() => setShow(!show)} className="absolute right-5 bottom-3 text-2xl cursor-pointer">
                         {
                             show ? <IoIosEye /> : <IoIosEyeOff />
@@ -40,7 +62,7 @@ const Login = () => {
                 <p className="mt-3">Don&apos;t have an account? <Link to='/register' className="text-[#41B06E] underline font-semibold">Register</Link></p>
                 <div className="divider"></div>
                 <div className="flex justify-center flex-col items-center gap-4">
-                    <button><img src="/google.png" alt="" className="w-10" /></button>
+                    <button onClick={handleGoogleLogIn}><img src="/google.png" alt="" className="w-10" /></button>
                     <p className="font-medium opacity-80">Continue With Google</p>
                 </div>
             </form>
