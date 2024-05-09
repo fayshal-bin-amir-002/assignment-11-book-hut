@@ -2,10 +2,13 @@ import { Link, NavLink } from "react-router-dom";
 import { MdSunny } from "react-icons/md";
 import { PiMoon } from "react-icons/pi";
 import { useEffect, useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const NavBar = () => {
 
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+    const { user } = useAuth();
 
     useEffect(() => {
         localStorage.setItem('theme', theme);
@@ -28,7 +31,9 @@ const NavBar = () => {
                     </div>
                     <ul tabIndex={0} className="space-y-2 menu-sm dropdown-content mt-12 z-[1] p-2 shadow bg-[#FFF5E0] rounded-box w-52">
                         {navLinks}
+                        <li><button className="flex lg:hidden btn-sm btn border-none bg-red-400 text-white rounded-full px-6">Log Out</button></li>
                     </ul>
+                    
                 </div>
                 <Link className="btn bg-transparent hover:bg-transparent shadow-none border-none text-xl lg:text-2xl hidden lg:flex gap-0">Book <span className="text-[#41B06E]">Hut</span></Link>
             </div>
@@ -38,17 +43,24 @@ const NavBar = () => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end lg:gap-3">
                 <div>
                     {
                         theme === 'light' ?
-                        <button onClick={() => setTheme('dark')} className="btn bg-transparent border-none shadow-none text-2xl mr-3 hover:bg-transparent"><MdSunny /></button> :
-                        <button onClick={() => setTheme('light')} className="btn bg-transparent border-none shadow-none text-2xl mr-3 hover:bg-transparent"><PiMoon /></button> 
+                            <button onClick={() => setTheme('dark')} className="btn bg-transparent border-none shadow-none text-2xl hover:bg-transparent"><MdSunny /></button> :
+                            <button onClick={() => setTheme('light')} className="btn bg-transparent border-none shadow-none text-2xl hover:bg-transparent"><PiMoon /></button>
                     }
                 </div>
-                <div className="w-12 rounded-full overflow-hidden border-4 border-[#8DECB4]">
-                    <img className="rouned-full " alt="image" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
+                {
+                    !user ?
+                        <div className="flex lg:gap-3 items-center">
+                            <div className="w-12 rounded-full overflow-hidden border-4 border-[#8DECB4]">
+                                <img className="rouned-full " alt="image" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                            <button className="hidden lg:flex btn border-none bg-red-400 text-white rounded-full px-6">Log Out</button>
+                        </div> :
+                        <button className="btn bg-[#8DECB4] border-none rounded-full px-6">Login</button>
+                }
             </div>
         </div>
     );
