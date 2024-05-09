@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         lato: '"Lato", sans-serif'
+      },
+      backgroundImage: {
+        heroBg: "url('/hero-bg.jpg')"
       }
     },
   },

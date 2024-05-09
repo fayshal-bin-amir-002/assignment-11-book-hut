@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/NavBar/NavBar";
 
 const MainLayout = () => {
     return (
         <div className="font-lato container mx-auto px-5">
-            <p>this is main</p>
+            <NavBar></NavBar>
             <Outlet></Outlet>
         </div>
     );

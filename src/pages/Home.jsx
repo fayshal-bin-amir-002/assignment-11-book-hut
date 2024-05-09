@@ -1,7 +1,11 @@
+import Banner from "../components/Banner";
+import BookCategory from "../components/BookCategory";
+
 const Home = () => {
     return (
         <div>
-            <p>this is home</p>
+            <Banner></Banner>
+            {/* <BookCategory></BookCategory> */}
         </div>
     );
 };
