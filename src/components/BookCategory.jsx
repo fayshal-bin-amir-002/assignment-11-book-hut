@@ -3,7 +3,7 @@ import 'react-tabs/style/react-tabs.css';
 
 const BookCategory = () => {
     return (
-        <div >
+        <div className='my-8 md:my-14 lg:my-24'>
             <Tabs>
                 <div className='text-center'>
                     <TabList>

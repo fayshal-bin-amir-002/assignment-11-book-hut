@@ -11,6 +11,9 @@ export default {
       },
       backgroundImage: {
         heroBg: "url('/hero-bg.jpg')"
+      },
+      daisyui: {
+        themes: ["light", "dark"],
       }
     },
   },

@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            {/* <BookCategory></BookCategory> */}
+            <BookCategory></BookCategory>
         </div>
     );
 };

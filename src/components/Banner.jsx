@@ -1,18 +1,12 @@
-import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        // <div className="py-6 md:py-8 lg:py-12 flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
-        //     <div>
-
-        //     </div>
-        // </div>
-        <div className="hero h-[750px] rounded-lg overflow-hidden bg-heroBg">
+        <div className="hero h-[750px] rounded-lg overflow-hidden bg-heroBg mt-6 md:mt-8 lg:mt-12">
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 w-full">
                 <div className="hero-content text-center lg:text-left text-white lg:w-1/2">
