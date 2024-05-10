@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import useAuth from '../hooks/useAuth';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import BookCategoryCard from './BookCategoryCard';
+import axios from 'axios';
 
 const BookCategory = () => {
 
@@ -15,9 +16,9 @@ const BookCategory = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        axiosSecure.get(`/books?email=${user?.email}&category=${bookCategory}`)
+        axios.get(`http://localhost:3000/books?category=${bookCategory}`)
             .then(res => {
-                setBooks(res?.data);
+                setBooks(res?.data || []);
             })
     }, [bookCategory, user?.email, axiosSecure]);
 
@@ -28,7 +29,7 @@ const BookCategory = () => {
                 <p className='opacity-80'>Explore diverse genres from mystery to self-help. Find your next adventure, love story, or historical journey. Discover new worlds within our book categories section.</p>
             </div>
             <Tabs>
-                <div className='text-center mb-7'>
+                <div className='text-center mb-7 lg:mb-12'>
                     <TabList>
                         <Tab onClick={() => setBookCategory('Biography')}>Biography</Tab>
                         <Tab onClick={() => setBookCategory('History')}>History</Tab>

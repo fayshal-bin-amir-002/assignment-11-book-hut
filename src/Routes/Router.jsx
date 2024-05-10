@@ -7,6 +7,7 @@ import BorrowedBooks from "../pages/BorrowedBooks";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivetRoute from "./PrivetRoute";
+import BookDetails from "../pages/BookDetails";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/book-details/:id",
+        element: <PrivetRoute><BookDetails></BookDetails></PrivetRoute>,
+        loader: ({params}) => fetch(`http://localhost:3000/book-details/${params.id}`)
       }
     ]
   },

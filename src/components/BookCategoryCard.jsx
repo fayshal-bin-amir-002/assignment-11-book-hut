@@ -28,7 +28,7 @@ const BookCategoryCard = ({ book }) => {
                 </div>
             </div>
             <div className='px-4'>
-                <Link to={`/book-details/${_id}`} className="btn w-full bg-[#41B06E] text-white text-base rounded-full mb-4">Read more</Link>
+                <Link to={`/book-details/${_id}`} className="btn w-full bg-[#41B06E] text-white text-base rounded-full mb-4">View Details</Link>
             </div>
         </div>
     );
