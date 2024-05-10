@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import PrivetRoute from "./PrivetRoute";
 import BookDetails from "../pages/BookDetails";
 import ErrorPage from "../pages/ErrorPage";
+import UpdateBook from "../pages/UpdateBook";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
         path: "/book-details/:id",
         element: <PrivetRoute><BookDetails></BookDetails></PrivetRoute>,
         loader: ({params}) => fetch(`http://localhost:3000/book-details/${params.id}`)
+      },
+      {
+        path: "/update-book/:id",
+        element: <PrivetRoute><UpdateBook></UpdateBook></PrivetRoute>,
+        loader: ({params}) => fetch(`http://localhost:3000/get-book/${params.id}`)
       }
     ],
     errorElement: <ErrorPage></ErrorPage>

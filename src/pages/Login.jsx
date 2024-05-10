@@ -33,8 +33,8 @@ const Login = () => {
                         }
                     })
             })
-            .catch((error) => {
-                toast.error(error.message);
+            .catch(() => {
+                toast.error("Invalid email/password");
             })
     }
 
@@ -49,7 +49,7 @@ const Login = () => {
                         }
                     })
             })
-            .catch(error => {
+            .catch((error) => {
                 toast.error(error.message);
             })
     }
