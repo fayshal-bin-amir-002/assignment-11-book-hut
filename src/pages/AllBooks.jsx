@@ -5,6 +5,7 @@ import { FiGrid } from "react-icons/fi";
 import { FaListUl } from "react-icons/fa";
 import SingleBookCard from "../components/SingleBookCard";
 import SingleRow from "../components/SingleRow";
+import Loader from "../components/Loader";
 
 
 const AllBooks = () => {
@@ -12,6 +13,7 @@ const AllBooks = () => {
     const [available, setAvailable] = useState(false);
     const [bookStyle, setBookStyle] = useState('grid');
     const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const { user } = useAuth();
 
@@ -19,8 +21,15 @@ const AllBooks = () => {
 
     useEffect(() => {
         axiosSecure(`/allBooks?email=${user?.email}&showAvailable=${available}`)
-            .then(res => setBooks(res.data))
+            .then(res => {
+                setBooks(res.data);
+                setLoading(false);
+            })
     }, [available, user?.email, axiosSecure]);
+
+    if(loading) {
+        return <Loader></Loader>
+    }
 
     return (
         <div className="min-h-[calc(100vh-398px)] py-8 lg:py-12">

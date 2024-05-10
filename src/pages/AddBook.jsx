@@ -1,10 +1,12 @@
-import axios from "axios";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const AddBook = () => {
 
     const { user, librarianEmail } = useAuth();
+
+    const axiosSecure = useAxiosSecure();
 
     const handleAddBook = (e) => {
         e.preventDefault();
@@ -20,7 +22,7 @@ const AddBook = () => {
 
         const bookData = { book_name, author_name, category, photo, quantity, rating, details, comment };
 
-        axios.post("http://localhost:3000/add-book", bookData)
+        axiosSecure.post(`/add-book?email=${user?.email}`, bookData)
             .then(res => {
                 if(res.data.insertedId) {
                     form.reset();
@@ -58,7 +60,7 @@ const AddBook = () => {
                         <input type="number" min={0} name="quantity" placeholder="Book quantity" className="input input-bordered input-success w-full" required />
                     </div>
                     <div>
-                        <input type="number" min={0} max={5} name="rating" placeholder="Book rating" className="input input-bordered input-success w-full" required />
+                        <input type="number" min={0} max={5} step={0.1} name="rating" placeholder="Book rating" className="input input-bordered input-success w-full" required />
                     </div>
                     <div className="col-span-1 md:col-span-2">
                         <textarea type="text" name="details" placeholder="Book details" className=" input input-bordered input-success w-full h-20 py-2" required />

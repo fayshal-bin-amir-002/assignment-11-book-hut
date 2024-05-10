@@ -26,7 +26,7 @@ const Footer = () => {
         <div>
             <footer className="text-white bg-[#141E46] px-4 py-5 md:px-8">
                 <div className="max-w-lg sm:mx-auto sm:text-center">
-                    <h3 className="text-3xl lg:text-4xl font-semibold flex justify-center">Book <span className="text-[#41B06E]">Hut</span></h3>
+                    <Link to="/" className="text-3xl lg:text-4xl font-semibold flex justify-center">Book <span className="text-[#41B06E]">Hut</span></Link>
                     <p className="leading-relaxed mt-2 text-[15px] opacity-80">
                     Unlock the world of literature with ease. Navigate, discover, and enjoy an expansive library collection effortlessly. Elevate your reading experience with us.
                     </p>
