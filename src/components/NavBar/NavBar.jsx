@@ -56,7 +56,7 @@ const NavBar = () => {
                 <Link className="btn bg-transparent hover:bg-transparent shadow-none border-none text-xl lg:text-2xl hidden lg:flex gap-0">Book <span className="text-[#41B06E]">Hut</span></Link>
             </div>
             <div className="navbar-center">
-                <Link className="btn bg-transparent hover:bg-transparent shadow-none border-none text-xl lg:text-2xl flex gap-0 lg:hidden">Book <span className="text-[#41B06E]">Hut</span></Link>
+                <Link to='/' className="btn bg-transparent hover:bg-transparent shadow-none border-none text-xl lg:text-2xl flex gap-0 lg:hidden">Book <span className="text-[#41B06E]">Hut</span></Link>
                 <ul className="hidden lg:flex items-center justify-center gap-8 text-lg font-semibold">
                     {navLinks}
                 </ul>
