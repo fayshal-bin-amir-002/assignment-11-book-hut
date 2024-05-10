@@ -17,7 +17,7 @@ const BookCategory = () => {
     useEffect(() => {
         axiosSecure.get(`/books?email=${user?.email}&category=${bookCategory}`)
             .then(res => {
-                setBooks(res.data);
+                setBooks(res?.data);
             })
     }, [bookCategory, user?.email, axiosSecure]);
 
@@ -46,16 +46,32 @@ const BookCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 '>
+                        {
+                            books.map((book) => <BookCategoryCard key={book._id} book={book}></BookCategoryCard>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 3</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 '>
+                        {
+                            books.map((book) => <BookCategoryCard key={book._id} book={book}></BookCategoryCard>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 4</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 '>
+                        {
+                            books.map((book) => <BookCategoryCard key={book._id} book={book}></BookCategoryCard>)
+                        }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 5</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 '>
+                        {
+                            books.map((book) => <BookCategoryCard key={book._id} book={book}></BookCategoryCard>)
+                        }
+                    </div>
                 </TabPanel>
             </Tabs>
         </div>
