@@ -20,7 +20,7 @@ const BorrowedBookCard = ({ card, handleReturnBook }) => {
                 </div>
             </div>
             <div className='px-4'>
-                <button onClick={() => handleReturnBook(_id)} className="btn w-full mt-4 bg-[#41B06E] text-white text-base rounded-full mb-4">Return Book</button>
+                <button onClick={() => handleReturnBook(_id, borrower.borrowingBookId)} className="btn w-full mt-4 bg-[#41B06E] text-white text-base rounded-full mb-4">Return Book</button>
             </div>
         </div>
     );

@@ -22,18 +22,32 @@ const BorrowedBooks = () => {
         },
     })
 
-    const handleReturnBook = (id) => {
-        axios.delete(`http://localhost:3000/delete-borrowedBook/${id}`)
+    const handleReturnBook = (id1, id2) => {
+        axios.delete(`http://localhost:3000/delete-borrowedBook/${id1}`)
             .then(res => {
                 if(res.data.deletedCount === 1 ) {
-                    refetch();
-                    toast.success('Book returned successfully');
+                    axios.patch(`http://localhost:3000/update-quantity-increase/${id2}`, { email: user?.email })
+                    .then(() => {
+                        refetch();
+                        toast.success('Book returned successfully');
+                    })
+                    .catch(error => {
+                        toast.error(error.message);
+                    })
                 }
             })
     }
 
     if(isLoading) {
         return <Loader></Loader>
+    }
+
+    if(data.length === 0) {
+        return (
+            <div className="min-h-[calc(100vh-398px)] flex flex-col gap-10 justify-center items-center">
+                <p className="text-3xl lg:text-5xl font-medium text-red-400">You did not borrow any book yet!</p>
+            </div>
+        )
     }
 
     return (
