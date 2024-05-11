@@ -2,7 +2,6 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged,
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
-import Loader from '../components/Loader';
 import Loader2 from '../components/Loader2';
 
 export const AuthContext = createContext(null);

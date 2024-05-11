@@ -7,7 +7,7 @@ const BorrowedBookCard = ({ card, handleReturnBook }) => {
     return (
         <div className="flex flex-col justify-between rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
             <div>
-                <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+                <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 " />
                 <div className="flex flex-col justify-between p-4 space-y-7">
                     <div className="space-y-4">
                         <div>
