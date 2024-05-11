@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
 import Loader from '../components/Loader';
+import Loader2 from '../components/Loader2';
 
 export const AuthContext = createContext(null);
 
@@ -50,7 +51,7 @@ const AuthProvider = ({ children }) => {
     const AuthData = { librarianEmail, user, userRegister, userLogin, userLogOut, googleLogIn, userProfileUpdate };
 
     if(loading) {
-        return <Loader></Loader>
+        return <Loader2></Loader2>
     }
 
     return (
