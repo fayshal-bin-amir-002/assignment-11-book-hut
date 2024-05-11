@@ -26,7 +26,7 @@ const BookCategory = () => {
 
             {
                 loading ? <Loader></Loader> :
-                    <div className="p-5 mx-auto dark:bg-gray-100 dark:text-gray-800">
+                    <div className="p-5">
                         <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2 justify-self-center">
                             <Link to={`/books-category/Biography`}>
                                 <div className="text-white overflow-hidden hero relative rounded-lg shadow-md flex items-end justify-start w-full text-left dark:bg-gray-500 hover:scale-95 duration-300 bg-center bg-contain bg-[#FFF5E0] h-72" style={{ backgroundImage: 'url(https://hips.hearstapps.com/hmg-prod/images/bio-biopage-1675279849.jpg?crop=0.8933333333333334xw:1xh;center,top&resize=1200:*)' }}>
