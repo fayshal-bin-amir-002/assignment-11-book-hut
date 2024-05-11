@@ -59,7 +59,7 @@ const Login = () => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-[calc(100vh-415px)] py-6 md:py-8 lg:py-12">
+        <div className="flex justify-center items-center min-h-[calc(100vh-398px)] py-8 md:py-10 lg:py-14">
             <form onSubmit={handleSubmit} className="w-[90%] md:w-2/3 lg:w-[600px] bg-[#8DECB4] p-6 lg:p-10 rounded-lg shadow-lg bg-opacity-30">
                 <label className="input input-bordered rounded-full flex items-center gap-2 focus:outline-none mb-6 lg:mb-8">
                     Email

@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../hooks/useAuth";
-import Loader from "../components/Loader";
 import BorrowedBookCard from "../components/BorrowedBookCard";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Loader2 from "../components/Loader2";
 
 const BorrowedBooks = () => {
 
@@ -39,7 +39,7 @@ const BorrowedBooks = () => {
     }
 
     if(isLoading) {
-        return <Loader></Loader>
+        return <Loader2></Loader2>
     }
 
     if(data.length === 0) {
