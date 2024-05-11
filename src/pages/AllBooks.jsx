@@ -36,9 +36,9 @@ const AllBooks = () => {
                         <button onClick={() => setAvailable(true)} className="btn bg-[#41B06E] rounded-full text-white text-lg">Show Available Books</button> :
                         <button onClick={() => setAvailable(false)} className="btn bg-[#41B06E] rounded-full text-white text-lg">Show All Books</button>
                 }
-                <div className="dropdown dropdown-bottom dropdown-end">
+                <div className="dropdown dropdown-bottom">
                     <div tabIndex={0} role="button" className="btn bg-[#41B06E] rounded-full text-white text-lg">View Books By</div>
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-3">
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 space-y-3">
                         <li>
                             <button onClick={() => setBookStyle('grid')} className="btn rounded-full text-xl bg-[#8DECB4]"><FiGrid /> Grid</button>
                         </li>
