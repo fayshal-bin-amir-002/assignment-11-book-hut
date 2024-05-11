@@ -23,10 +23,10 @@ const BorrowedBooks = () => {
     })
 
     const handleReturnBook = (id1, id2) => {
-        axios.delete(`http://localhost:3000/delete-borrowedBook/${id1}`)
+        axios.delete(`https://book-hut-server-side.vercel.app/delete-borrowedBook/${id1}`)
             .then(res => {
                 if(res.data.deletedCount === 1 ) {
-                    axios.patch(`http://localhost:3000/update-quantity-increase/${id2}`, { email: user?.email })
+                    axios.patch(`https://book-hut-server-side.vercel.app/update-quantity-increase/${id2}`, { email: user?.email })
                     .then(() => {
                         refetch();
                         toast.success('Book returned successfully');

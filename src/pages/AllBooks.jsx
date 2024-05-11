@@ -20,6 +20,7 @@ const AllBooks = () => {
     const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
+        setLoading(true);
         axiosSecure(`/allBooks?email=${user?.email}&showAvailable=${available}`)
             .then(res => {
                 setBooks(res.data);

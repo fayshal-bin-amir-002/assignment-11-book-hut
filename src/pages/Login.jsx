@@ -24,7 +24,7 @@ const Login = () => {
         userLogin(email, password)
             .then(() => {
                 const user = { email };
-                axios.post('http://localhost:3000/jwt', user, { withCredentials: true })
+                axios.post('https://book-hut-server-side.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             form.reset();
@@ -41,7 +41,7 @@ const Login = () => {
     const handleGoogleLogIn = () => {
         googleLogIn()
             .then((result) => {
-                axios.post('http://localhost:3000/jwt', { email: result?.user?.email }, { withCredentials: true })
+                axios.post('https://book-hut-server-side.vercel.app/jwt', { email: result?.user?.email }, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             toast.success('User logged in successfully.');

@@ -10,6 +10,7 @@ import PrivetRoute from "./PrivetRoute";
 import BookDetails from "../pages/BookDetails";
 import ErrorPage from "../pages/ErrorPage";
 import UpdateBook from "../pages/UpdateBook";
+import BookCategories from "../pages/BookCategories";
 
 const router = createBrowserRouter([
   {
@@ -43,12 +44,17 @@ const router = createBrowserRouter([
       {
         path: "/book-details/:id",
         element: <PrivetRoute><BookDetails></BookDetails></PrivetRoute>,
-        loader: ({params}) => fetch(`http://localhost:3000/book-details/${params.id}`)
+        loader: ({params}) => fetch(`https://book-hut-server-side.vercel.app/book-details/${params.id}`)
       },
       {
         path: "/update-book/:id",
         element: <PrivetRoute><UpdateBook></UpdateBook></PrivetRoute>,
-        loader: ({params}) => fetch(`http://localhost:3000/get-book/${params.id}`)
+        loader: ({params}) => fetch(`https://book-hut-server-side.vercel.app/get-book/${params.id}`)
+      },
+      {
+        path: "/books-category/:category",
+        element: <BookCategories></BookCategories>,
+        loader: ({params}) => fetch(`https://book-hut-server-side.vercel.app/book-category/${params.category}`)
       }
     ],
     errorElement: <ErrorPage></ErrorPage>
