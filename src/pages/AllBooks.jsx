@@ -27,22 +27,33 @@ const AllBooks = () => {
             })
     }, [available, user?.email, axiosSecure]);
 
-    if(loading) {
+    if (loading) {
         return <Loader></Loader>
     }
 
     return (
         <div className="min-h-[calc(100vh-398px)] py-8 lg:py-12">
-            <div className="flex flex-wrap gap-4 justify-between items-center mb-6 md:mb-8 lg:mb-12">
+            <div className="flex flex-wrap gap-4 justify-between items-center mb-10 lg:mb-16">
                 {
                     available === false ?
                         <button onClick={() => setAvailable(true)} className="btn bg-[#41B06E] rounded-full text-white text-lg">Show Available Books</button> :
                         <button onClick={() => setAvailable(false)} className="btn bg-[#41B06E] rounded-full text-white text-lg">Show All Books</button>
                 }
-                <div className="flex items-center justify-center gap-0">
+                <div className="dropdown dropdown-bottom dropdown-end">
+                    <div tabIndex={0} role="button" className="btn bg-[#41B06E] rounded-full text-white text-lg">View Books By</div>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-3">
+                        <li>
+                            <button onClick={() => setBookStyle('grid')} className="btn rounded-full text-xl bg-[#8DECB4]"><FiGrid /> Grid</button>
+                        </li>
+                        <li>
+                            <button onClick={() => setBookStyle('list')} className="btn rounded-full text-xl bg-[#FFF5E0]"><FaListUl />List</button>
+                        </li>
+                    </ul>
+                </div>
+                {/* <div className="flex items-center justify-center gap-0">
                     <button onClick={() => setBookStyle('grid')} className="btn rounded-s-full text-2xl bg-[#8DECB4]"><FiGrid /></button>
                     <button onClick={() => setBookStyle('list')} className="btn rounded-r-full text-2xl bg-[#FFF5E0]"><FaListUl /></button>
-                </div>
+                </div> */}
             </div>
             {
                 bookStyle === 'grid' ?

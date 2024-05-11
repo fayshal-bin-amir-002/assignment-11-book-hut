@@ -27,7 +27,7 @@ const Register = () => {
         }
 
         if (!regex.test(password)) {
-            toast.error("Password should be contain minimum one uppercase and one specail character!");
+            toast.error("Password should be contain minimum one uppercase and one special character!");
             return;
         }
 
