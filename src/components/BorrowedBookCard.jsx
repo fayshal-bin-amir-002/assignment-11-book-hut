@@ -5,7 +5,7 @@ const BorrowedBookCard = ({ card, handleReturnBook }) => {
     const { _id, photo, book_name, category, borrower } = card;
 
     return (
-        <div className="flex flex-col justify-between rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+        <div className="flex flex-col justify-between rounded-md shadow-md dark:bg-gray-50 ">
             <div>
                 <img src={photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 " />
                 <div className="flex flex-col justify-between p-4 space-y-7">
@@ -13,7 +13,7 @@ const BorrowedBookCard = ({ card, handleReturnBook }) => {
                         <div>
                             <h2 className="text-lg font-semibold tracking-wide">{book_name}</h2>
                         </div>
-                        <p className="dark:text-gray-800"><span className='font-semibold'>Category :</span> <span className='bg-[#8DECB4] px-2 py-1 rounded-full ms-2'>{category}</span></p>
+                        <p className=""><span className='font-semibold'>Category :</span> <span className='bg-[#8DECB4] px-2 py-1 rounded-full ms-2'>{category}</span></p>
                         <p>Borrowed Date : {borrower.borrowedDate}</p>
                         <p>Return Date : {borrower.returnDate}</p>
                     </div>

@@ -34,7 +34,7 @@ const BookCategory = () => {
                                     
                                     <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Biography</h4>
-                                        <div className="flex flex-col justify-start text-center dark:text-gray-800">
+                                        <div className="flex flex-col justify-start text-center">
                                             <span className="text-xl font-semibold leading-none tracking-wide">{bookCount.biography}</span>
                                             <span className="leading-none uppercase">Books</span>
                                         </div>
@@ -50,7 +50,7 @@ const BookCategory = () => {
                                     
                                     <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">History</h4>
-                                        <div className="flex flex-col justify-start text-center dark:text-gray-800">
+                                        <div className="flex flex-col justify-start text-center">
                                             <span className="text-xl font-semibold leading-none tracking-wide">{bookCount.history}</span>
                                             <span className="leading-none uppercase">Books</span>
                                         </div>
@@ -66,7 +66,7 @@ const BookCategory = () => {
                                     
                                     <div className="absolute top-0 left-0 right-0 flex gap-3 items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Health & Fitness</h4>
-                                        <div className="flex flex-col justify-start text-center dark:text-gray-800">
+                                        <div className="flex flex-col justify-start text-center ">
                                             <span className="text-xl font-semibold leading-none tracking-wide">{bookCount["health & fitness"]}</span>
                                             <span className="leading-none uppercase">Books</span>
                                         </div>
@@ -82,7 +82,7 @@ const BookCategory = () => {
                                    
                                     <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Travel</h4>
-                                        <div className="flex flex-col justify-start text-center dark:text-gray-800">
+                                        <div className="flex flex-col justify-start text-center ">
                                             <span className="text-xl font-semibold leading-none tracking-wide">{bookCount.travel}</span>
                                             <span className="leading-none uppercase">Books</span>
                                         </div>
@@ -98,7 +98,7 @@ const BookCategory = () => {
                                     
                                     <div className="absolute top-0 left-0 right-0 flex gap-3 items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Science & Math</h4>
-                                        <div className="flex flex-col justify-start text-center dark:text-gray-800">
+                                        <div className="flex flex-col justify-start text-center ">
                                             <span className="text-xl font-semibold leading-none tracking-wide">{bookCount["science & math"]}</span>
                                             <span className="leading-none uppercase">Books</span>
                                         </div>
