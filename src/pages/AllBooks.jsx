@@ -28,10 +28,6 @@ const AllBooks = () => {
             })
     }, [available, user?.email, axiosSecure]);
 
-    if (loading) {
-        return <Loader></Loader>
-    }
-
     return (
         <div className="min-h-[calc(100vh-398px)] py-8 lg:py-12">
             <div className="flex flex-wrap gap-4 justify-between items-center mb-10 lg:mb-16">
@@ -51,41 +47,39 @@ const AllBooks = () => {
                         </li>
                     </ul>
                 </div>
-                {/* <div className="flex items-center justify-center gap-0">
-                    <button onClick={() => setBookStyle('grid')} className="btn rounded-s-full text-2xl bg-[#8DECB4]"><FiGrid /></button>
-                    <button onClick={() => setBookStyle('list')} className="btn rounded-r-full text-2xl bg-[#FFF5E0]"><FaListUl /></button>
-                </div> */}
             </div>
             {
-                bookStyle === 'grid' ?
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {
-                            books.map((book) => <SingleBookCard key={book._id} book={book}></SingleBookCard>)
-                        }
-                    </div> :
-                    <div>
-                        <div className="overflow-x-auto">
-                            <table className="table">
-                                {/* head */}
-                                <thead className="bg-[#FFF5E0] text-black">
-                                    <tr>
-                                        <th></th>
-                                        <th>Book Name</th>
-                                        <th>Author Name</th>
-                                        <th>Category</th>
-                                        <th>Rating</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        books.map((book, idx) => <SingleRow key={book._id} book={book} idx={idx}></SingleRow>)
-                                    }
-                                </tbody>
-                            </table>
+                loading ?
+                    <Loader></Loader> :
+                    bookStyle === 'grid' ?
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            {
+                                books.map((book) => <SingleBookCard key={book._id} book={book}></SingleBookCard>)
+                            }
+                        </div> :
+                        <div>
+                            <div className="overflow-x-auto">
+                                <table className="table">
+                                    {/* head */}
+                                    <thead className="bg-[#FFF5E0] text-black">
+                                        <tr>
+                                            <th></th>
+                                            <th>Book Name</th>
+                                            <th>Author Name</th>
+                                            <th>Category</th>
+                                            <th>Rating</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            books.map((book, idx) => <SingleRow key={book._id} book={book} idx={idx}></SingleRow>)
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
             }
         </div>
     );
