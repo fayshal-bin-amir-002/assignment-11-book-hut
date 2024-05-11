@@ -31,7 +31,7 @@ const BookCategory = () => {
                             <Link to={`/books-category/Biography`}>
                                 <div className="text-white overflow-hidden hero relative rounded-lg shadow-md flex items-end justify-start w-full text-left  hover:scale-95 duration-300 bg-center bg-contain bg-[#FFF5E0] h-72" style={{ backgroundImage: 'url(https://hips.hearstapps.com/hmg-prod/images/bio-biopage-1675279849.jpg?crop=0.8933333333333334xw:1xh;center,top&resize=1200:*)' }}>
                                     <div className="hero-overlay absolute bg-opacity-60 w-full h-full"></div>
-                                    <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via- dark:from-gray-50 dark:to-gray-50"></div>
+                                    
                                     <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Biography</h4>
                                         <div className="flex flex-col justify-start text-center dark:text-gray-800">
@@ -47,7 +47,7 @@ const BookCategory = () => {
                             <Link to={`/books-category/History`}>
                                 <div className="text-white overflow-hidden hero relative rounded-lg shadow-md flex items-end justify-start w-full text-left  hover:scale-95 duration-300 bg-center bg-no-repeat bg-[#FFF5E0] h-72" style={{ backgroundImage: 'url(https://dualcreditathome.com/wp-content/uploads/2014/02/history.jpg)' }}>
                                     <div className="hero-overlay absolute bg-opacity-60 w-full h-full"></div>
-                                    <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via- dark:from-gray-50 dark:to-gray-50"></div>
+                                    
                                     <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">History</h4>
                                         <div className="flex flex-col justify-start text-center dark:text-gray-800">
@@ -63,7 +63,7 @@ const BookCategory = () => {
                             <Link to={`/books-category/Health & Fitness`}>
                                 <div className="text-white overflow-hidden hero relative rounded-lg shadow-md flex items-end justify-start w-full text-left  hover:scale-95 duration-300 bg-center bg-no-repeat object-contain bg-[#FFF5E0] h-72" style={{ backgroundImage: 'url(https://thumbs.dreamstime.com/z/health-fitness-wellness-stack-books-stethoscope-wooden-background-84731460.jpg)' }}>
                                     <div className="hero-overlay absolute bg-opacity-60 w-full h-full"></div>
-                                    <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via- dark:from-gray-50 dark:to-gray-50"></div>
+                                    
                                     <div className="absolute top-0 left-0 right-0 flex gap-3 items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Health & Fitness</h4>
                                         <div className="flex flex-col justify-start text-center dark:text-gray-800">
@@ -79,7 +79,7 @@ const BookCategory = () => {
                             <Link to={`/books-category/Travel`}>
                                 <div className="text-white overflow-hidden hero relative rounded-lg shadow-md flex items-end justify-start w-full text-left  hover:scale-95 duration-300 bg-center bg-no-repeat object-contain bg-[#FFF5E0] h-72" style={{ backgroundImage: 'url(https://www.passengertravel.com/files/IMG_552_1647867573.jpg)' }}>
                                     <div className="hero-overlay absolute bg-opacity-60 w-full h-full"></div>
-                                    <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via- dark:from-gray-50 dark:to-gray-50"></div>
+                                   
                                     <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Travel</h4>
                                         <div className="flex flex-col justify-start text-center dark:text-gray-800">
@@ -95,7 +95,7 @@ const BookCategory = () => {
                             <Link to={`/books-category/Science & Math`}>
                                 <div className="text-white overflow-hidden hero relative rounded-lg shadow-md flex items-end justify-start w-full text-left  hover:scale-95 duration-300 bg-center bg-no-repeat object-contain bg-[#FFF5E0] h-72" style={{ backgroundImage: 'url(https://www.cbu.ac.zm/schoolsAndUnits/schoolofmathematicsandnaturalsciences/wp-content/uploads/sites/5/2021/06/maths.jpg)' }}>
                                     <div className="hero-overlay absolute bg-opacity-60 w-full h-full"></div>
-                                    <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b dark:via- dark:from-gray-50 dark:to-gray-50"></div>
+                                    
                                     <div className="absolute top-0 left-0 right-0 flex gap-3 items-center justify-between mx-5 mt-3">
                                         <h4 className="py-2 text-xl font-semibold tracking-wider uppercase ">Science & Math</h4>
                                         <div className="flex flex-col justify-start text-center dark:text-gray-800">
