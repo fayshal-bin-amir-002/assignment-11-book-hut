@@ -44,7 +44,7 @@ const AddBook = () => {
                         <input type="text" name="author_name" placeholder="Author name" className="input input-bordered input-success w-full" required />
                     </div>
                     <div>
-                        <select name="category" defaultValue={''} className="select select-success w-full">
+                        <select name="category" defaultValue={''} className="select select-success w-full" required>
                             <option disabled value=''>Select Category</option>
                             <option value="Biography">Biography</option>
                             <option value="History">History</option>

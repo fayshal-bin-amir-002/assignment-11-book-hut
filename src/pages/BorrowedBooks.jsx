@@ -52,7 +52,7 @@ const BorrowedBooks = () => {
 
     return (
         <div className="min-h-[calc(100vh-398px)] flex justify-center items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 py-6 md:py-8 lg:py-12 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 py-6 md:py-8 lg:py-12 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
                 {
                     data.map((card) => <BorrowedBookCard 
                     key={card._id} card={card} handleReturnBook={handleReturnBook}></BorrowedBookCard>)

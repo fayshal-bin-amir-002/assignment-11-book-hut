@@ -15,7 +15,7 @@ const AllBooks = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const { user } = useAuth();
+    const { user, librarianEmail } = useAuth();
 
     const axiosSecure = useAxiosSecure();
 
@@ -68,8 +68,12 @@ const AllBooks = () => {
                                             <th>Author Name</th>
                                             <th>Category</th>
                                             <th>Rating</th>
+                                            <th>Quantity</th>
                                             <th>Status</th>
-                                            <th>Actions</th>
+                                            {
+                                                user?.email === librarianEmail &&
+                                                <th>Actions</th>
+                                            }
                                         </tr>
                                     </thead>
                                     <tbody>

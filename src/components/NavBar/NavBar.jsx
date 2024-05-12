@@ -75,7 +75,7 @@ const NavBar = () => {
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-12 rounded-full overflow-hidden border-4 border-[#8DECB4]">
-                                        <img className="rouned-full " alt="image" src={user?.photoURL} />
+                                        <img className="rouned-full w-full" alt="image" src={user?.photoURL} />
                                     </div>
                                 </div>
                                 <ul tabIndex={0} className="mt-1 bg-[#8DECB4] space-y-3 z-[1] p-2 shadow menu menu-sm dropdown-content  rounded-box min-w-52">

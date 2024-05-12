@@ -66,7 +66,7 @@ const BookDetails = () => {
             })
 
 
-        
+
     }
 
     return (
@@ -115,7 +115,7 @@ const BookDetails = () => {
                         </label>
                         <label className="form-control w-full">
                             <div className="label -mb-3">
-                                <span className="label-text">Return Date</span>
+                                <span className="label-text">Last Return Date</span>
                             </div>
                             <input defaultValue={date} type="text" className="input input-bordered w-full my-3" disabled />
                         </label>

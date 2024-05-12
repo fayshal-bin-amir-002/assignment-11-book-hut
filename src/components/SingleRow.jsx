@@ -16,10 +16,14 @@ const SingleRow = ({ book, idx }) => {
             <td>{author_name}</td>
             <td>{category}</td>
             <td>{rating}</td>
+            <td>{quantity}</td>
             <td>{quantity > 0 ? "Available" : "Not availabele"}</td>
-            <td>
-                <Link to={`/update-book/${_id}`} className='btn text-xl btn-sm bg-[#41B06E] text-white border-none' disabled={user?.email !== librarianEmail}><FiEdit /></Link>
-            </td>
+            {
+                user?.email === librarianEmail &&
+                <td>
+                    <Link to={`/update-book/${_id}`} className='btn text-xl btn-sm bg-[#41B06E] text-white border-none' disabled={user?.email !== librarianEmail}><FiEdit /></Link>
+                </td>
+            }
         </tr>
     );
 };

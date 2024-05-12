@@ -15,7 +15,7 @@ const HappyUsers = () => {
     return (
         <div className="mb-8 md:mb-16 lg:mb-24">
             <div>
-                <h2 className="text-3xl lg:text-5xl font-semibold text-center mb-6 md:mb-8 lg:mb-12">Our happy users</h2>
+                <h2 className="text-3xl lg:text-5xl font-semibold text-center mb-6 md:mb-8 lg:mb-12">Our happy readers</h2>
             </div>
             <Marquee>
                 {

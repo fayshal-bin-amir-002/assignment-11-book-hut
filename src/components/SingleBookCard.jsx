@@ -20,7 +20,8 @@ const SingleBookCard = ({ book }) => {
                             <h2 className="text-lg font-semibold tracking-wide">{book_name}</h2>
                             <p>By. {author_name}</p>
                         </div>
-                        <p className=""><span className='font-semibold'>Category :</span> <span className='bg-[#8DECB4] px-2 py-1 rounded-full ms-2'>{category}</span></p>
+                        <p><span className='font-semibold'>Category :</span> <span className='bg-[#8DECB4] px-2 py-1 rounded-full ms-2'>{category}</span></p>
+                        <p><span className='font-semibold mr-2'>Quantity :</span> <span className='opacity-80'>{quantity}</span></p>
                         <StarRatings
                             starDimension="24px"
                             rating={parseFloat(rating)}
@@ -33,9 +34,12 @@ const SingleBookCard = ({ book }) => {
                 <div className='absolute -top-4 -left-4'>
                     <p className={quantity > 0 ? 'bg-[#8DECB4] max-w-max px-2 py-1 rounded-full' : 'bg-red-300 max-w-max px-2 py-1 rounded-full'}>{quantity > 0 ? 'Available' : 'Not available'}</p>
                 </div>
-                <div className='absolute top-3 right-3'>
-                    <Link to={`/update-book/${_id}`} className='btn text-2xl bg-[#41B06E] text-white border-none' disabled={user?.email !== librarianEmail}><FiEdit /></Link>
-                </div>
+                {
+                    user?.email === librarianEmail &&
+                    <div className='absolute top-3 right-3'>
+                        <Link to={`/update-book/${_id}`} className='btn text-2xl bg-[#41B06E] text-white border-none' disabled={user?.email !== librarianEmail}><FiEdit /></Link>
+                    </div>
+                }
             </div>
         </div>
     );

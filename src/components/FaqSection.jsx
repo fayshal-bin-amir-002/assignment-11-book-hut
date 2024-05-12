@@ -1,8 +1,8 @@
 const FaqSection = () => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-20 mb-8 md:mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-20 mb-8 md:mb-16 lg:mb-24 bg-[#FFF5E0] bg-opacity-50 p-5 lg:p-12 rounded-lg shadow-sm">
             <div>
-                <img src='https://static.vecteezy.com/system/resources/previews/002/779/438/original/website-faq-section-user-help-desk-customer-support-concept-illustration-flat-vector.jpg' alt="" className="w-full" />
+                <img src='https://static.vecteezy.com/system/resources/previews/002/779/438/original/website-faq-section-user-help-desk-customer-support-concept-illustration-flat-vector.jpg' alt="" className="w-full rounded-lg shadow-md" />
             </div>
             <div className="w-full space-y-3">
                 <div className="collapse collapse-arrow bg-base-200">
