@@ -24,7 +24,7 @@ const UpdateBook = () => {
 
         const bookData = { book_name, author_name, category, photo, quantity, rating };
 
-        axios.patch(`http://localhost:3000/update-book/${_id}`, bookData)
+        axios.patch(`https://book-hut-server-side.vercel.app/update-book/${_id}`, bookData)
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     toast.success("Book updated successfully.");

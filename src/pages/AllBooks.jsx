@@ -82,49 +82,46 @@ const AllBooks = () => {
                 </div>
             </div>
             {
-                books.length === 0 ?
 
+                loading ? <Loader></Loader> : books.length === 0 ?
                     <div className="min-h-[20vh] flex justify-center items-center"><p className="text-3xl md:text-5xl font-medium text-red-500">No Book Found!</p></div> :
-
-                    loading ?
-                        <Loader></Loader> :
-                        bookStyle === 'grid' ?
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                {
-                                    books.map((book) => <SingleBookCard key={book._id} book={book}></SingleBookCard>)
-                                }
-                            </div> :
-                            <div>
-                                <div className="overflow-x-auto">
-                                    <table className="table">
-                                        {/* head */}
-                                        <thead className="bg-[#FFF5E0] text-black">
-                                            <tr>
-                                                <th></th>
-                                                <th>Book Name</th>
-                                                <th>Author Name</th>
-                                                <th>Category</th>
-                                                <th>Rating</th>
-                                                <th>Quantity</th>
-                                                <th>Status</th>
-                                                {
-                                                    user?.email === librarianEmail &&
-                                                    <th>Actions</th>
-                                                }
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                    bookStyle === 'grid' ?
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            {
+                                books.map((book) => <SingleBookCard key={book._id} book={book}></SingleBookCard>)
+                            }
+                        </div> :
+                        <div>
+                            <div className="overflow-x-auto">
+                                <table className="table">
+                                    {/* head */}
+                                    <thead className="bg-[#FFF5E0] text-black">
+                                        <tr>
+                                            <th></th>
+                                            <th>Book Name</th>
+                                            <th>Author Name</th>
+                                            <th>Category</th>
+                                            <th>Rating</th>
+                                            <th>Quantity</th>
+                                            <th>Status</th>
                                             {
-                                                books && books.map((book, idx) => <SingleRow key={book._id} book={book} idx={idx}></SingleRow>)
+                                                user?.email === librarianEmail &&
+                                                <th>Actions</th>
                                             }
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            books && books.map((book, idx) => <SingleRow key={book._id} book={book} idx={idx}></SingleRow>)
+                                        }
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
             }
             <div className="pt-12 flex items-center justify-center gap-5">
                 {
-                    
+
                     totalPages.map((page) => <button onClick={() => setCurrentPage(page + 1)} className={`${currentPage === page + 1 ? 'bg-[#41B06E] text-white' : ''} btn`} key={page}>{page + 1}</button>)
                 }
             </div>

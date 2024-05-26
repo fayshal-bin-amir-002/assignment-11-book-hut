@@ -8,7 +8,7 @@ const HappyUsers = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(()=> {
-        axios.get('http://localhost:3000/users-card')
+        axios.get('https://book-hut-server-side.vercel.app/users-card')
             .then(res => setCards(res.data))
     }, []);
 

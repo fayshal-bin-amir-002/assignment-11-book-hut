@@ -5,7 +5,7 @@ const useTotalBooks = () => {
     const { data = 0, isLoading } = useQuery({
         queryKey: ["totalBooks"],
         queryFn: async () => {
-            const { data } = await axios.get("http://localhost:3000/totalBooks");
+            const { data } = await axios.get("https://book-hut-server-side.vercel.app/totalBooks");
             return data.total;
         }
     });
