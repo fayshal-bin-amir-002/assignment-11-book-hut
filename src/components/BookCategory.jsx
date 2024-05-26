@@ -9,7 +9,7 @@ const BookCategory = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`https://book-hut-server-side.vercel.app/books`)
+        axios.get(`http://localhost:3000/books`)
             .then(res => {
                 setBookCount(res.data);
                 setLoading(false);

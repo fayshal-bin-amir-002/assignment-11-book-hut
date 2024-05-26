@@ -53,9 +53,9 @@ const BookDetails = () => {
             }
         };
 
-        axios.post('https://book-hut-server-side.vercel.app/borrow-books', borrowedBook)
+        axios.post('http://localhost:3000/borrow-books', borrowedBook)
             .then(() => {
-                axios.patch(`https://book-hut-server-side.vercel.app/update-quantity/${id}`, { returnDate })
+                axios.patch(`http://localhost:3000/update-quantity/${id}`, { returnDate })
                     .then(() => {
                         toast.success("Book successfully borrowed.");
                         navigate("/borrowed-books");

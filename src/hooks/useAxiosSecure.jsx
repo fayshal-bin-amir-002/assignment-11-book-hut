@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const axiosSecure = axios.create({
-    baseURL: 'https://book-hut-server-side.vercel.app',
+    baseURL: 'http://localhost:3000',
     withCredentials: true
 });
 
@@ -30,3 +30,5 @@ const useAxiosSecure = () => {
 };
 
 export default useAxiosSecure;
+
+// http://localhost:3000

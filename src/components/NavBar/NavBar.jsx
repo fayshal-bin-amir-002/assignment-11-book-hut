@@ -22,7 +22,7 @@ const NavBar = () => {
         userLogOut()
             .then(() => {
                 const loggedUser = { email: user?.email };
-                axios.post('https://book-hut-server-side.vercel.app/logout', loggedUser, { withCredentials: true })
+                axios.post('http://localhost:3000/logout', loggedUser, { withCredentials: true })
                     .then((res) => {
                         if (res.data.success) {
                             toast.success('User logged out');
