@@ -18,3 +18,7 @@ It is a digital library management website. It helps users to borrow book and ma
 # Librarian Role :
 - Email : amir@gmail.com
 - password : 1234A@
+
+# Clone Project?
+- npm i
+- set up firebase keys
